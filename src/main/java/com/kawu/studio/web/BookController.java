@@ -24,7 +24,7 @@ public class BookController {
         return new Result<>(true, result);
     }
 
-    @PostMapping("/delete")
+    @GetMapping("/delete")
     public Object delete(@RequestParam Long bookId) {
         int result = bookService.deleteBook(bookId);
         return new Result<>(true, result);
