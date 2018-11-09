@@ -18,6 +18,24 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
+    @PostMapping("/add")
+    public Object add(@RequestBody Book book) {
+        int result = bookService.addBook(book);
+        return new Result<>(true, result);
+    }
+
+    @PostMapping("/delete")
+    public Object delete(@RequestParam Long bookId) {
+        int result = bookService.deleteBook(bookId);
+        return new Result<>(true, result);
+    }
+
+    @PostMapping("/update")
+    public Object update(@RequestBody Book book) {
+        int result = bookService.updateBook(book);
+        return new Result<>(true, result);
+    }
+
     @GetMapping("/list")
     public Object list() {
         List<Book> list = bookService.getList();
