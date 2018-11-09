@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.soecode.lyf.dao.BookDao">
+<mapper namespace="com.kawu.studio.dao.BookDao">
 	<!-- 目的：为dao接口方法提供sql语句配置 -->
-	<select id="queryById" resultType="Book" parameterType="long">
+	<select id="queryById" resultType="com.kawu.studio.entity.Book" parameterType="long">
 		<!-- 具体的sql -->
 		SELECT
 			book_id,
@@ -16,7 +16,7 @@
 			book_id = #{bookId}
 	</select>
 	
-	<select id="queryAll" resultType="Book">
+	<select id="queryAll" resultType="com.kawu.studio.entity.Book">
 		SELECT
 			book_id,
 			name,
