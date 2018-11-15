@@ -42,11 +42,11 @@ public class BookController {
         return new Result<>(true, list);
     }
 
-    @GetMapping("/{bookId}/detail")
-    public Object detail(@PathVariable("bookId") Long bookId) {
-        if (bookId == null) {
-            return new Result<>(false, "bookId不能为空");
-        }
+        @GetMapping("/{bookId}/detail")
+        public Object detail(@PathVariable("bookId") Long bookId) {
+            if (bookId == null) {
+                return new Result<>(false, "bookId不能为空");
+            }
         Book book = bookService.getById(bookId);
         if (book == null) {
             return new Result<>(false, "book不存在");

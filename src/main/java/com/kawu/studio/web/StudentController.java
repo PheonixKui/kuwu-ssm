@@ -1,4 +1,54 @@
 package com.kawu.studio.web;
 
+import com.kawu.studio.dto.Result;
+import com.kawu.studio.entity.Student;
+import com.kawu.studio.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+/**
+* @author      Cloud Flying
+*/
+@RestController
+@RequestMapping("/student")
 public class StudentController {
+    @Autowired
+    private StudentService studentService;
+
+    @PostMapping("/add")
+    public Object add(@RequestBody Student student) {
+        int result = studentService.addStudent(student);
+        return new Result<>(true, result);
+    }
+
+    @GetMapping("/delete")
+    public Object delete(@RequestParam Long studentId) {
+        int result = studentService.deleteStudent(studentId);
+        return new Result<>(true, result);
+    }
+
+    @PostMapping("/update")
+    public Object update(@RequestBody Student student) {
+        int result = studentService.updateStudent(student);
+        return new Result<>(true, result);
+    }
+
+    @GetMapping("/list")
+    public Object list() {
+        List<Student> list = studentService.getList();
+        return new Result<>(true, list);
+    }
+
+    @GetMapping("/{studentId}/detail")
+    public Object detail(@PathVariable("studentId") Long studentId) {
+        if (studentId == null) {
+            return new Result<>(false, "studentId不能为空");
+        }
+        Student student = studentService.getById(studentId);
+        if (student == null) {
+            return new Result<>(false, "student不存在");
+        }
+        return new Result<>(true, student);
+    }
 }

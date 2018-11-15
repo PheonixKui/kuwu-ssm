@@ -33,7 +33,9 @@
 	 <!-- 4.扫描web相关的bean -->
 	<!-- 4.扫描web相关的bean -->
 	<context:component-scan base-package="com.kawu.studio.web" use-default-filters="false">
+		<!--只扫描base-package指定下的有@Controller下的java类，并注册成bean-->
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<!--只扫描base-package指定下的有@ControllerAdvice下的java类，并注册成bean-->
 		<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
 	</context:component-scan>
 </beans>

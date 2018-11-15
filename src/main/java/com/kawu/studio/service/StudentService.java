@@ -1,30 +1,28 @@
 package com.kawu.studio.service;
 
 import com.kawu.studio.dto.AppointExecution;
-import com.kawu.studio.entity.Book;
+import com.kawu.studio.entity.Student;
 
 import java.util.List;
-
-
 /**
- * 业务接口：站在"使用者"角度设计接口 三个方面：方法定义粒度，参数，返回类型（return 类型/异常）
- */
-public interface BookService {
+* @author      Cloud Flying
+*/
+public interface StudentService {
 
 	/**
-	 * 查询一本图书
+	 * 按Id查询学生
 	 * 
-	 * @param bookId
+	 * @param studentId
 	 * @return
 	 */
-	Book getById(long bookId);
+	Student getById(long studentId);
 
 	/**
-	 * 查询所有图书
+	 * 查询所有学生
 	 * 
 	 * @return
 	 */
-	List<Book> getList();
+	List<Student> getList();
 
 	/**
 	 * 预约图书
@@ -35,9 +33,9 @@ public interface BookService {
 	 */
 	AppointExecution appoint(long bookId, long studentId);
 
-	int addBook(Book book);
+	int addStudent(Student student);
 
-	int deleteBook(Long bookId);
+	int deleteStudent(Long studentId);
 
-	int updateBook(Book book);
+	int updateStudent(Student student);
 }
