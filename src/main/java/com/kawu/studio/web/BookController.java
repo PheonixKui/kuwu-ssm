@@ -57,8 +57,8 @@ public class BookController {
     // ajax json
     @PostMapping(value = "/{bookId}/appoint")
     public Result<AppointExecution> appoint(@PathVariable("bookId") Long bookId, @RequestParam("studentId") Long studentId) {
-        if (studentId == null || studentId.equals("")) {
-            return new Result<>(false, "学号不能为空");
+        if (bookId == null || bookId.equals("")) {
+            return new Result<>(false, "书号不能为空");
         }
         AppointExecution execution = null;
         try {

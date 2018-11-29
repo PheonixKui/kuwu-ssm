@@ -4,7 +4,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kawu.studio.dao.BookDao">
 	<insert id="insertBook">
-		    insert into book (name, number)
+	insert into book (name, number)
     values (
     #{name},
      #{number})
