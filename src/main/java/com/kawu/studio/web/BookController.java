@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("/book")
 public class BookController {
     @Autowired
-    private BookService bookService;
+    private BookService bookService;    //控制层，需调用服务层的接口来控制业务流程
 
     @PostMapping("/add")
     public Object add(@RequestBody Book book) {

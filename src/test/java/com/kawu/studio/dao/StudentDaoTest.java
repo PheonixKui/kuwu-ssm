@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class StudentDao extends BaseTest {
+public class StudentDaoTest extends BaseTest {
     @Autowired
     private StudentDao studentDao;
 
@@ -15,7 +15,7 @@ public class StudentDao extends BaseTest {
     public void testQueryById() throws Exception {
         long studentId = 1000;
         Student student = studentDao.queryById(studentId);
-        System.out.print(student);
+        System.out.println(student);
     }
 
     @Test
@@ -24,12 +24,6 @@ public class StudentDao extends BaseTest {
         for (Student student : students) {
             System.out.println(student);
         }
-    }
-
-    @Test
-    public void testDeleteStudent() throws Exception{
-        long studentId = 1001;
-        studentDao.deleteStudent(studentId);
     }
 
 }

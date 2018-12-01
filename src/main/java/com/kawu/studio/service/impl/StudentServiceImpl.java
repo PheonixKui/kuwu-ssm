@@ -32,6 +32,7 @@ public class StudentServiceImpl implements StudentService {
         return studentDao.queryAll(0,1000);
     }
 
+
     @Override
     public int addStudent(Student student) {
         return studentDao.addStudent(student);

@@ -30,7 +30,7 @@ public interface StudentDao {
     int addStudent(Student student);
 
     /**
-     * 根据studentid删除学生
+     * 根据studentId删除学生
      * @param studentId
      * @return
      */
