@@ -31,7 +31,6 @@ public class BookServiceImpl implements BookService {
 	@Autowired
 	private AppointmentDao appointmentDao;
 
-
 	@Override
 	public Book getById(long bookId) {
 		return bookDao.queryById(bookId);
